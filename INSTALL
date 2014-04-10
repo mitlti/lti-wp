@@ -1,0 +1,10 @@
+sudo docker build -t "lti-wp" https://raw.githubusercontent.com/mitlti/lti-wp/master/Dockerfile
+sudo docker run -d -P -t --name="lti-wp-container" lti-wp
+# ssh into running container, password is "me"
+ssh me@0.0.0.0 -p `sudo docker port lti-wp-container 22 | awk -F: '{print $2}'`
+cd lti-wp
+# this will take up to 15 minutes, installs libxml, php locally for php-cgi
+make
+sudo apache2ctl start
+# depending on where docker is, go to that IP (usually 0.0.0.0 if not running in a VM) and the port
+sudo docker port lti-wp-container 80 | awk -F: '{print $2}'

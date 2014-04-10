@@ -28,3 +28,5 @@ php-install: | deps/php-5.5.11
 
 fcgi-install:
 	python gen_htaccess_fcgi.py
+	echo me | sudo -S chmod u+x php.fcgi
+	echo me | sudo -S chown -R www-data .
