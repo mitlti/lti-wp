@@ -1,1 +1,3 @@
-wp-content/database
+deps
+php.fcgi
+.htaccess

@@ -1,14 +1,6 @@
-# FcgidMaxRequestsPerProcess should be <= PHP_FCGI_MAX_REQUESTS
-# The example PHP wrapper script overrides the default PHP setting.
-# FcgidMaxRequestsPerProcess 10000
-
-# Uncomment the following line if cgi.fix_pathinfo is set to 1 in
-# php.ini:
-# FcgidFixPathinfo 1
-
 AddHandler fcgid-script .php
 Options +ExecCGI
-FcgidWrapper /home/me/wordpress/php5.fcgi .php
+FcgidWrapper /home/me/lti-wp/php.fcgi .php
 
 # Customize the next two directives for your requirements.
 Order allow,deny
