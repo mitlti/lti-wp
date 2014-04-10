@@ -1,3 +1,5 @@
+all: libxml-install php-install fcgi-install
+
 deps:
 	mkdir -p deps
 
